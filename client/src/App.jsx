@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import {GuestLayout, AuthLayout} from "./pages/Layout.jsx";
 import AuthPage from "./pages/AuthPage.jsx";
 import HomePage from "./pages/HomePage.jsx";
@@ -25,6 +25,10 @@ function App() {
         <Route path='/builder/:id' element={<BuilderPage />} />
         <Route path='/preview/:id' element={<PreviewPage/>} />
       </Route>
+
+      {/* Catch-all */}
+      <Route path='*' element={<Navigate to="/" replace />} />
+
     </Routes>
   );
 }
