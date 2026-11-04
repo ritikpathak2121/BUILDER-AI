@@ -1,11 +1,12 @@
 import { useState } from "react";
 import "./App.css";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import {GuestLayout, AuthLayout} from "./pages/Layout.jsx";
 import AuthPage from "./pages/AuthPage.jsx";
 import HomePage from "./pages/HomePage.jsx";
 import BuilderPage from "./pages/BuilderPage.jsx";
 import PreviewPage from "./pages/PreviewPage.jsx";
+import PublishPage from "./pages/PublishPage.jsx";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -25,6 +26,11 @@ function App() {
         <Route path='/builder/:id' element={<BuilderPage />} />
         <Route path='/preview/:id' element={<PreviewPage/>} />
       </Route>
+
+      <Route path='/publish/:id' element={<PublishPage />} /> 
+      {/* Catch-all */}
+      <Route path='*' element={<Navigate to="/" replace />} />
+
     </Routes>
   );
 }

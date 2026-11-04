@@ -1,6 +1,6 @@
 import { detectDependencies } from "./sandpackUtils";
 
-export async function exportProjectZip(project) {
+export default async function exportProjectZip(project) {
     if (!project) return;
     try {
         const JSZip = (await import("jszip")).default;
