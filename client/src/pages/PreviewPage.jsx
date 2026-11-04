@@ -3,7 +3,7 @@ import React from 'react'
 export default function PreviewPage() {
   return (
     <div>
-      preview page
+      <h1>Preview page</h1>
     </div>
   )
 }
